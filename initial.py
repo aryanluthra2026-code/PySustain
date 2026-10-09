@@ -1,5 +1,5 @@
 import hashlib
-from pysustain import create_tables, add_user
+from data import create_tables, add_user
 
 
 def hash_password(password):
