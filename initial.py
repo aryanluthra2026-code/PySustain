@@ -19,7 +19,7 @@ admins = [
 
 # Pre-existing user accounts
 users = [
-    ("aryan", "aryan123"),
+    ("user1", "user123"),
     ("user2", "user456"),
     ("user3", "user789")
 ]
