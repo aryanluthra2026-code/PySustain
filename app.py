@@ -1,5 +1,17 @@
 import streamlit as st
 import pandas as pd
+import os
+from data import create_tables, add_user, get_user
+import hashlib
+
+# Ensure database and default users exist on startup
+if not os.path.exists("security.db"):
+    create_tables()
+    try:
+        add_user("admin1", hashlib.sha256("admin123".encode()).hexdigest(), "ADMIN")
+        add_user("user1", hashlib.sha256("user123".encode()).hexdigest(), "USER")
+    except Exception:
+        pass
 
 from data import (
     get_threats,
