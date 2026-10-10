@@ -1,15 +1,6 @@
-
-import os
 from data import create_tables, add_user
 import hashlib
 
-# Auto-initialize database on Streamlit Cloud if it doesn't exist
-if not os.path.exists("security.db"):
-    create_tables()
-    # Add default admin
-    add_user("admin1", hashlib.sha256("admin123".encode()).hexdigest(), "ADMIN")
-    # Add default user
-    add_user("user1", hashlib.sha256("user123".encode()).hexdigest(), "USER")
 
 
 def hash_password(password):
