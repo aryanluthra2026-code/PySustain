@@ -30,7 +30,7 @@ for username, password in admins:
     try:
         add_user(
             username,
-            hash_password(password),
+            password,
             "ADMIN"
         )
     except Exception:
