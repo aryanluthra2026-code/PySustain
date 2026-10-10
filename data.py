@@ -240,8 +240,57 @@ def update_threat_status(threat_id, status):
 
     conn.commit()
     conn.close()
+import hashlib
 
 
+def hash_password(password):
+    return hashlib.sha256(password.encode()).hexdigest()
+
+
+# Create the database and tables first
+create_tables()
+
+
+# Pre-existing admin accounts
+admins = [
+    ("admin1", "admin123"),
+    ("admin2", "admin456")
+]
+
+
+# Pre-existing user accounts
+users = [
+    ("aryan", "aryan123"),
+    ("user2", "user456"),
+    ("user3", "user789")
+]
+
+
+# Add admins
+for username, password in admins:
+    try:
+        add_user(
+            username,
+            hash_password(password),
+            "ADMIN"
+        )
+    except Exception:
+        print(f"{username} already exists.")
+
+
+# Add normal users
+for username, password in users:
+    try:
+        add_user(
+            username,
+            hash_password(password),
+            "USER"
+        )
+    except Exception:
+        print(f"{username} already exists.")
+
+
+print("Initial accounts created successfully.")
 # Create database when this file is run
 if __name__ == "__main__":
     create_tables()
