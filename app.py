@@ -41,7 +41,7 @@ from auth import show_login_page, logout
 # ==================================================
 
 st.set_page_config(
-    page_title="FADE Pay | Secure Payment Gateway",
+    page_title="FADE  | Secure Payment Gateway",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -72,7 +72,7 @@ detector = FraudDetector()
 # SIDEBAR (pure Python)
 # ==================================================
 
-st.sidebar.title("FADE Pay")
+st.sidebar.title("FADE")
 st.sidebar.caption("Secure Payment Gateway")
 st.sidebar.divider()
 
