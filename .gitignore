@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+security.db
+fade_pay_source.zip
+FADE_PAY_ALL_SOURCE.txt
+*.log
